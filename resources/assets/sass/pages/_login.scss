@@ -1,0 +1,57 @@
+// Login card
+.center-vh {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 100%;
+}
+.divider {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-flex: 0;
+    flex: 0 1 0%;
+    color: #929daf;
+    font-size: 11px;
+    letter-spacing: .5px;
+    margin: 2rem auto;
+    width: 100%;
+}
+.divider::before {
+    margin-right: 16px;
+}
+.divider::before, .divider::after {
+    content: '';
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    border-top: 1px solid #ebebeb;
+}
+.divider::after {
+    margin-left: 16px;
+}
+.min-h-fullscreen {
+    min-height: 100vh !important;
+}
+
+.card-shadowed {
+    -webkit-box-shadow: 0 0 25px rgba(0,0,0,0.07);
+    box-shadow: 0 0 25px rgba(0,0,0,0.07);
+}
+
+.w-400px {
+    width: 400px !important;
+}
+
+.py-30 {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+}
+
+.px-50 {
+    padding-right: 50px !important;
+    padding-left: 50px !important;
+}

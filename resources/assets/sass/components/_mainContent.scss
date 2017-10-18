@@ -1,0 +1,10 @@
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#content {
+    min-height: 100vh;
+    transition: all 0.3s;
+    width: 100%;
+}
