@@ -48,3 +48,7 @@ Contribution are always **welcome and recommended**! Here is how:
 - Clone the repo to your machine
 - Make your changes
 - Create a pull request
+
+License
+-------
+Creativer LaravelVue is an open source project by [Constantin Stan] that is licensed under [MIT](http://opensource.org/licenses/MIT).
