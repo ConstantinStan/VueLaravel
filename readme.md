@@ -1,4 +1,4 @@
-## VueLaravel starter theme
+## CreativeR VueLaravel starter theme
 
 VueLaravel is a starter admin template.
 
