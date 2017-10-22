@@ -29,6 +29,14 @@ cp .env.example .env
 composer update
 sudo npm install
 
+# Install passport
+composer require laravel/passport
+
+# Create mysql tables
+php artisan migrate
+
+php artisan passport:install
+
 # generate api key
 php artisan key:generate
 
