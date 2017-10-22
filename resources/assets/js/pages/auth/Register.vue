@@ -84,7 +84,7 @@
             let accessToken = response.access_token;
             localStorage.setItem('access_token', accessToken);
             window.axios.defaults.headers.common['Authorization'] = 'Bearer ' + accessToken;
-            this.$router.push({ path: 'dashboard' })
+            this.$router.push({ path: '/' })
           })
           .catch(error => {
             console.log('error ....')

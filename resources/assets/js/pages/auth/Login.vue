@@ -6,14 +6,15 @@
 
        <form class="form-type-material" @submit.prevent="login">
          <div class="form-group">
-           <label for="username">Email</label>
-           <input type="text" class="form-control" id="username" name="username" v-model="form.email">
-
+           <label for="email">Email</label>
+           <input type="text" class="form-control" id="email" name="email" v-bind:class="{'is-invalid': form.errors.get('email')}" v-model="form.email">
+           <div class="invalid-feedback" v-text="form.errors.get('email')"></div>
          </div>
 
          <div class="form-group">
            <label for="password">Password</label>
-           <input type="password" class="form-control" id="password" name="password" v-model="form.password">
+           <input type="password" class="form-control" id="password" name="password" v-model="form.password" v-bind:class="{'is-invalid': form.errors.get('password')}">
+           <div class="invalid-feedback" v-text="form.errors.get('password')"></div>
          </div>
 
          <div class="form-group flexbox flex-column flex-md-row">
@@ -75,10 +76,10 @@
 
           localStorage.setItem('access_token', accessToken);
           window.axios.defaults.headers.common['Authorization'] = 'Bearer ' + accessToken;
-          this.$router.push({ path: 'dashboard' })
+          this.$router.push({ path: '/' })
         }).catch(error => {
           console.log(error)
-        })      
+        })
       }
     }
   }

@@ -66,7 +66,12 @@ class LoginController extends Controller
         // user surpasses their maximum number of attempts they will get locked out.
         $this->incrementLoginAttempts($request);
 
-        //abort(401, 'auth failed');
-        return response()->json(['name' => 'Abigail','state' => 'CA'], 401);
+        //abort(422, 'auth failed');
+        return response()->json([
+          'message' => 'Username or password are incorrect',
+          'errors' => [
+            'email' => ['Username or password are incorrect']
+          ]
+        ], 422);
     }
 }

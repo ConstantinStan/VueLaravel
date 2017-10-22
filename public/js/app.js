@@ -36347,6 +36347,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -36378,7 +36379,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         localStorage.setItem('access_token', accessToken);
         window.axios.defaults.headers.common['Authorization'] = 'Bearer ' + accessToken;
-        _this.$router.push({ path: 'dashboard' });
+        _this.$router.push({ path: '/' });
       }).catch(function (error) {
         console.log(error);
       });
@@ -36473,7 +36474,7 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "form-group" }, [
-              _c("label", { attrs: { for: "username" } }, [_vm._v("Email")]),
+              _c("label", { attrs: { for: "email" } }, [_vm._v("Email")]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -36485,7 +36486,8 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { type: "text", id: "username", name: "username" },
+                class: { "is-invalid": _vm.form.errors.get("email") },
+                attrs: { type: "text", id: "email", name: "email" },
                 domProps: { value: _vm.form.email },
                 on: {
                   input: function($event) {
@@ -36495,6 +36497,11 @@ var render = function() {
                     _vm.form.email = $event.target.value
                   }
                 }
+              }),
+              _vm._v(" "),
+              _c("div", {
+                staticClass: "invalid-feedback",
+                domProps: { textContent: _vm._s(_vm.form.errors.get("email")) }
               })
             ]),
             _vm._v(" "),
@@ -36511,6 +36518,7 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control",
+                class: { "is-invalid": _vm.form.errors.get("password") },
                 attrs: { type: "password", id: "password", name: "password" },
                 domProps: { value: _vm.form.password },
                 on: {
@@ -36520,6 +36528,13 @@ var render = function() {
                     }
                     _vm.form.password = $event.target.value
                   }
+                }
+              }),
+              _vm._v(" "),
+              _c("div", {
+                staticClass: "invalid-feedback",
+                domProps: {
+                  textContent: _vm._s(_vm.form.errors.get("password"))
                 }
               })
             ]),
@@ -36768,7 +36783,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var accessToken = response.access_token;
         localStorage.setItem('access_token', accessToken);
         window.axios.defaults.headers.common['Authorization'] = 'Bearer ' + accessToken;
-        _this.$router.push({ path: 'dashboard' });
+        _this.$router.push({ path: '/' });
       }).catch(function (error) {
         console.log('error ....');
       });
