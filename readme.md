@@ -12,30 +12,42 @@ Installing CreativeR VueLaravel is easy.
 
 Download from Github
 
-#### Using The Command Line:
+#### Using The Command Line (cloning in the current directory):
 
 ```
-git clone https://github.com/ConstantinStan/VueLaravel.git
+git clone https://github.com/ConstantinStan/VueLaravel.git .
 ```
 
 #### Build Setup
+All commands should be set on the root directory where you're installing the app
 
 ``` bash
 # create .env file
 cp .env.example .env
 
+# Set proper file permissions
+sudo chgrp -R www-data storage bootstrap/cache
+sudo chmod -R ug+rwx storage bootstrap/cache
 
-# install dependencies
+# Generate encryption key
+php artisan key:generate
+
+# Install dependencies
 composer update
 sudo npm install
 
 # Install passport
 composer require laravel/passport
 
+# Generate encryption keys
+php artisan key:generate
+
 # Create mysql tables
 php artisan migrate
 
 php artisan passport:install
+php artisan passport:keys
+php artisan passport:client --personal
 
 # generate api key
 php artisan key:generate
